@@ -28,15 +28,21 @@ namespace Handasa_Map
             List<T> Visited = new List<T>();
             T P = Parent;
             T S = Source;
+            ParentChildTable[S] = P;
             //ordinary traversal
             while (!(S as IEquatable<T>).Equals(Destination))
             {
                 if (!Visited.Contains(S))
                 {
-                    ParentChildTable[S] = P;
                     Visited.Add(S);
-                    foreach (T child in Data[S])
-                        OrderOfVisit.Push(child);
+                    foreach (T child in Data[S])//add adding parent here
+                    {
+                        if(!Visited.Contains(child))
+                        {
+                            ParentChildTable[child] = S;//problem parent override
+                            OrderOfVisit.Push(child);
+                        }
+                    }    
                 }
                 P = S;
                 S = OrderOfVisit.Pop();
@@ -48,6 +54,7 @@ namespace Handasa_Map
                 Route.AddLast(S);
                 S = ParentChildTable[S];
             } while (!(S as IEquatable<T>).Equals(Source));
+            Route.AddLast(S);
             return Route;
         }
     }

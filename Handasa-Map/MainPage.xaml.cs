@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Diagnostics;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -36,13 +37,35 @@ namespace Handasa_Map
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            // TODO: Prepare page for display here.
-
-            // TODO: If your application contains multiple pages, ensure that you are
-            // handling the hardware Back button by registering for the
-            // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
-            // If you are using the NavigationHelper provided by some templates,
-            // this event is handled for you.
+            Graph<string> g = new Graph<string>(true);
+            g.AddNode("hello");
+            g.AddNode("me");
+            g.AddNode("I'm");
+            g.AddNode("a");
+            g.AddNode("hero");
+            g.AddNode("today");
+            g.AddEdge("me", "today");
+            g.AddEdge("a", "hero");
+            g.AddEdge("hello", "hero");
+            g.AddEdge("I'm", "a");
+            g.AddEdge("I'm", "hello");
+            g.AddEdge("me", "a");
+            g.AddEdge("hero", "me");
+            LinkedList<string> l;
+            //foreach (string item in l)
+            //{
+            //    Debug.WriteLine(item);
+            //}
+            //l = g.DFS("hello", "today", null);
+            //foreach (string item in l)
+            //{
+            //    Debug.WriteLine(item);
+            //}
+            l = g.DFS("I'm", "today", null);
+            foreach (string item in l)
+            {
+                Debug.WriteLine(item);
+            }
         }
     }
 }
