@@ -37,35 +37,7 @@ namespace Handasa_Map
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            Graph<string> g = new Graph<string>(true);
-            g.AddNode("hello");
-            g.AddNode("me");
-            g.AddNode("I'm");
-            g.AddNode("a");
-            g.AddNode("hero");
-            g.AddNode("today");
-            g.AddEdge("me", "today");
-            g.AddEdge("a", "hero");
-            g.AddEdge("hello", "hero");
-            g.AddEdge("I'm", "a");
-            g.AddEdge("I'm", "hello");
-            g.AddEdge("me", "a");
-            g.AddEdge("hero", "me");
-            LinkedList<string> l;
-            //foreach (string item in l)
-            //{
-            //    Debug.WriteLine(item);
-            //}
-            //l = g.DFS("hello", "today", null);
-            //foreach (string item in l)
-            //{
-            //    Debug.WriteLine(item);
-            //}
-            l = g.DFS("I'm", "today", null);
-            foreach (string item in l)
-            {
-                Debug.WriteLine(item);
-            }
+
         }
     }
 }

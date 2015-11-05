@@ -8,25 +8,25 @@ namespace Handasa_Map
 {
     class Graph<T>
     {
-        private Dictionary<T, LinkedList<T>> Data = new Dictionary<T, LinkedList<T>>();
+        private Dictionary<T, List<T>> Data = new Dictionary<T, List<T>>();
         private bool Directed;
         public Graph(bool Directed){
             this.Directed = Directed;
         }
         public void AddNode (T Node){
-            Data.Add(Node, new LinkedList<T>());
+            Data.Add(Node, new List<T>());
         }
         public void AddEdge(T From, T To){
-            Data[From].AddLast(To);
+            Data[From].Add(To);
             if (!Directed)
-                Data[To].AddLast(From);
+                Data[To].Add(From);
         }
-        public LinkedList<T> DFS(T Source, T Destination,T Parent)
+        public List<T> DFS(T Source, T Destination)
         {
             Stack<T> OrderOfVisit = new Stack<T>();
             Dictionary<T, T> ParentChildTable = new Dictionary<T, T>();
             List<T> Visited = new List<T>();
-            T P = Parent;
+            T P = Source;
             T S = Source;
             ParentChildTable[S] = P;
             //ordinary traversal
@@ -45,16 +45,19 @@ namespace Handasa_Map
                     }    
                 }
                 P = S;
-                S = OrderOfVisit.Pop();
+                if (OrderOfVisit.Count > 0)
+                    S = OrderOfVisit.Pop();
+                else
+                    return null;
             }
             //traverse back parents
-            LinkedList<T> Route = new LinkedList<T>();
+            List<T> Route = new List<T>();
             do
             {
-                Route.AddLast(S);
+                Route.Add(S);
                 S = ParentChildTable[S];
             } while (!(S as IEquatable<T>).Equals(Source));
-            Route.AddLast(S);
+            Route.Add(S);
             return Route;
         }
     }
