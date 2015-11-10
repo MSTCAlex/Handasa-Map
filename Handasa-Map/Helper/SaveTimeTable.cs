@@ -53,3 +53,12 @@ namespace Handasa_Map.Helper
             return data[1];
         }
 
+        // DELETE Priod Data
+        public void deletePriodData(string day, string priod)
+        {
+            Windows.Storage.ApplicationDataContainer timeTableHolder = Windows.Storage.ApplicationData.Current.LocalSettings;
+            timeTableHolder.Values.Remove(day + "::" + priod);
+        }
+
+    }
+}
