@@ -1,9 +1,18 @@
+
 namespace Handasa_Map.Helper
 {
+    /// <summary>
+    /// Save user's time table to local settings
+    /// </summary>
     public class SaveTimeTable
     {
-        // get day -- priod -- description -- place
-        // save them to local folder
+        /// <summary>
+        /// Method to actually save the values
+        /// </summary>
+        /// <param name="day">get the day</param>
+        /// <param name="priod">get the priod</param>
+        /// <param name="description">get the description</param>
+        /// <param name="place">get the place</param>
         public void SaveValues(string day, string priod, string description, string place)
         {
             Windows.Storage.ApplicationDataContainer timeTableHolder = Windows.Storage.ApplicationData.Current.LocalSettings;
@@ -22,7 +31,13 @@ namespace Handasa_Map.Helper
         //then we can format descriptionAndPlace string to get the place
 
 
-        //first we get day/priod data
+
+        /// <summary>
+        /// first we get day/priod data 
+        /// </summary>
+        /// <param name="day">Day that you want</param>
+        /// <param name="priod">Priod that you want</param>
+        /// <returns>priod data formatted like description::place</returns>
         public string priodData(string day, string priod)
         {
 
@@ -37,6 +52,7 @@ namespace Handasa_Map.Helper
 
             return priodData;
         }
+
 
         //then we format priod data to get description and place
            // --- GET Description
@@ -53,12 +69,14 @@ namespace Handasa_Map.Helper
             return data[1];
         }
 
+
         // DELETE Priod Data
         public void deletePriodData(string day, string priod)
         {
             Windows.Storage.ApplicationDataContainer timeTableHolder = Windows.Storage.ApplicationData.Current.LocalSettings;
             timeTableHolder.Values.Remove(day + "::" + priod);
         }
+
 
     }
 }
