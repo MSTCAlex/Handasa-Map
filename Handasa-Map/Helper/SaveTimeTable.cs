@@ -38,7 +38,7 @@ namespace Handasa_Map.Helper
         /// <param name="day">Day that you want</param>
         /// <param name="priod">Priod that you want</param>
         /// <returns>priod data formatted like description::place</returns>
-        public string priodData(string day, string priod)
+        public string GetPriodData(string day, string priod)
         {
 
             //extract data from local settings
@@ -47,7 +47,7 @@ namespace Handasa_Map.Helper
 
             if (priodData == null)
             {
-                return "You have nothing in this priod";
+                return null;
             }
 
             return priodData;
