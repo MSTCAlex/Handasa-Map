@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Handasa_Map.MainPage"
+    x:Class="Handasa_Map.EditTimeTable"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Handasa_Map"
@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Button HorizontalAlignment="Center" Click="Button_Click">go to my time table</Button>
+    <Grid x:Name="LayoutRoot">
+
     </Grid>
 </Page>
