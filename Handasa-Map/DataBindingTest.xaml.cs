@@ -12,22 +12,20 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using System.Diagnostics;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
+using Windows.UI;
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
 namespace Handasa_Map
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class DataBindingTest : Page
     {
-        public MainPage()
+        public DataBindingTest()
         {
             this.InitializeComponent();
-
-            this.NavigationCacheMode = NavigationCacheMode.Required;
+            //G.Children.Add(new Faculty());
         }
 
         /// <summary>
@@ -37,22 +35,6 @@ namespace Handasa_Map
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(TimeTablePage));
-        }
-
-        private void button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Map));
-        }
-
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(DataBindingTest));
         }
     }
 }

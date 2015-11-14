@@ -10,5 +10,7 @@
 
     <Grid>
         <Button HorizontalAlignment="Center" Click="Button_Click">go to my time table</Button>
+        <Button x:Name="button" Content="Go to map page" HorizontalAlignment="Left" Margin="106,367,0,0" VerticalAlignment="Top" Width="188" Click="button_Click_1"/>
+        <Button x:Name="button1" Content="DataBindingTest" HorizontalAlignment="Left" Margin="106,222,0,0" VerticalAlignment="Top" Width="188" Click="button1_Click"/>
     </Grid>
 </Page>

@@ -86,8 +86,14 @@
     <Compile Include="Common\ObservableDictionary.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="DataBindingTest.xaml.cs">
+      <DependentUpon>DataBindingTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EditTimeTable.xaml.cs">
       <DependentUpon>EditTimeTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Faculty.xaml.cs">
+      <DependentUpon>Faculty.xaml</DependentUpon>
     </Compile>
     <Compile Include="Graph.cs" />
     <Compile Include="Helper\SaveTimeTable.cs" />
@@ -98,7 +104,9 @@
       <DependentUpon>Map.xaml</DependentUpon>
     </Compile>
     <Compile Include="period.cs" />
+    <Compile Include="Plane.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Segment.cs" />
     <Compile Include="TimeTablePage.xaml.cs">
       <DependentUpon>TimeTablePage.xaml</DependentUpon>
     </Compile>
@@ -121,7 +129,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="DataBindingTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EditTimeTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Faculty.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
