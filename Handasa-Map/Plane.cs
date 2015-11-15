@@ -12,38 +12,35 @@ namespace Handasa_Map
 {
     class Plane
     {
-        public enum Mode
-        {
-            Create,
-            Navigate
-        }
-        public Mode M = Mode.Navigate;
+        List<Segment> Result;
         Graph<Segment> Relation = new Graph<Segment>(false);
         public void AddSegment(Shape Segment)
         {
-            Segment.Tag = new Segment(Segment.Name);
-            Segment.DataContext = Segment.Tag;
-            Relation.AddNode(Segment.Tag as Segment);
+            Segment.DataContext = new Segment(Segment.Name);
+            Relation.AddNode(Segment.DataContext as Segment);
             Segment.SetBinding(Shape.FillProperty, new Binding() { Path = new PropertyPath("Color") });
-            Segment.Tapped += Segment_Tapped;
-        }
-
-        private void Segment_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
-        {
-            
         }
 
         public void AddRelation(Shape From, Shape To)
         {
-            Relation.AddEdge(From.Tag as Segment, To.Tag as Segment);
+            Relation.AddEdge(From.DataContext as Segment, To.DataContext as Segment);
         }
         public void Navigate(Shape From, Shape To)
         {
-            List<Segment> Result = Relation.DFS(From.Tag as Segment, To.Tag as Segment);
-            foreach (Segment item in Result)
-            {
-                item.Color = new SolidColorBrush(Colors.CadetBlue);
-            }
+            Result = Relation.DFS(From.DataContext as Segment, To.DataContext as Segment);
+            if(Result != null)
+                foreach (Segment item in Result)
+                {
+                    item.Color = new SolidColorBrush(Colors.CadetBlue);
+                }
+        }
+        public void UndoNavigation()
+        {
+            if(Result != null)
+                foreach (Segment item in Result)
+                {
+                    item.Color = new SolidColorBrush(Colors.DarkCyan);
+                }
         }
         public void Navigate(string From, string To)
         {

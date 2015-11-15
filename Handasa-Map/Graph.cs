@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Handasa_Map
 {
+    
     class Graph<T>
     {
         private Dictionary<T, List<T>> Data = new Dictionary<T, List<T>>();

@@ -2,8 +2,10 @@
 using Windows.UI;
 using System;
 using System.ComponentModel;
+using System.Xml.Serialization;
 namespace Handasa_Map
 {
+    
     class Segment:IEquatable<Segment>,INotifyPropertyChanged
     {
         public string Name { get; set; }

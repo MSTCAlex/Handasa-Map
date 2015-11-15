@@ -16,16 +16,16 @@
             <Rectangle x:Name="fdoor1"  Margin="356,439,0,144"/>
             <Rectangle x:Name="cross1" Margin="237,439,0,144" HorizontalAlignment="Left" Width="119"/>
             <Rectangle x:Name="elecdoor2" Margin="0,396,0,201" HorizontalAlignment="Right" Width="44"/>
-            <Rectangle  Margin="162,439,214,144"/>
+            <Rectangle x:Name="cross2" Margin="162,439,214,144"/>
             <Rectangle x:Name="addoor1" Margin="186,439,163,143"/>
-            <Rectangle Margin="0,439,267,144"/>
-            <Rectangle Margin="0,407,0,201" HorizontalAlignment="Left" Width="67"/>
-            <Rectangle Margin="0,350,0,233" HorizontalAlignment="Left" Width="67"/>
-            <Rectangle Margin="162,381,144,201"/>
-            <Rectangle Margin="162,350,144,259"/>
-            <Rectangle Margin="35,319,0,289" HorizontalAlignment="Left" Width="32"/>
-            <Rectangle Margin="0,319,0,289" HorizontalAlignment="Left" Width="35"/>
-            <Rectangle  Margin="133,439,238,143"/>
+            <Rectangle x:Name="cross3" Margin="0,439,267,144"/>
+            <Rectangle x:Name="prepdoor2" Margin="0,407,0,201" HorizontalAlignment="Left" Width="67"/>
+            <Rectangle x:Name="cross4" Margin="0,350,0,233" HorizontalAlignment="Left" Width="67"/>
+            <Rectangle x:Name="cross5" Margin="162,381,144,201"/>
+            <Rectangle x:Name="electdoor1" Margin="162,350,144,259"/>
+            <Rectangle x:Name="prepdoor3" Margin="35,319,0,289" HorizontalAlignment="Left" Width="32"/>
+            <Rectangle x:Name="fdoor2" Margin="0,319,0,289" HorizontalAlignment="Left" Width="35"/>
+            <Rectangle x:Name="prepdoor1" Margin="133,439,238,143"/>
         </Grid>
     </Grid>
 </UserControl>
