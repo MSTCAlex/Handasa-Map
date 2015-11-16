@@ -15,11 +15,13 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Handasa_Map.Helper;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
 namespace Handasa_Map
 {
+
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -27,6 +29,11 @@ namespace Handasa_Map
     {
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
+        private String[] Days= {"Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday"};
+        private int DayCounter = 0;
+        private String[] Periods = { "First", "Second", "Third", "Fourth", "Fifth", "Sixth" };
+        private int PeriodCounter = 0;
+
 
         public EditTimeTable()
         {
@@ -107,5 +114,22 @@ namespace Handasa_Map
         }
 
         #endregion
+
+        private void NextButton_Click(object sender, RoutedEventArgs e)
+        {
+            PeriodCounter++;
+            if (PeriodCounter > Periods.Length)
+            {
+                PeriodCounter = 0;
+                DayCounter++;
+            }
+            var SaveTimeTable = new SaveTimeTable();
+            SaveTimeTable.SaveValues(DayLabel.Text,PeriodLabel.Text,DescriptionFeild.Text,PlaceFeild.Text);
+
+            DayLabel.Text = Days[DayCounter];
+            PeriodLabel.Text = Periods[PeriodCounter];
+            PlaceFeild.Text = null;
+            DescriptionFeild.Text = null;
+        }
     }
 }
