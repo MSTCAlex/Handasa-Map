@@ -123,13 +123,15 @@ namespace Handasa_Map
                 PeriodCounter = 0;
                 DayCounter++;
             }
+
+
             var SaveTimeTable = new SaveTimeTable();
-            SaveTimeTable.SaveValues(DayLabel.Text,PeriodLabel.Text,DescriptionFeild.Text,PlaceFeild.Text);
+            SaveTimeTable.SaveValues(DayLabel.Text, PeriodLabel.Text, DescriptionFeild.Text, PlaceFeild.Text);
 
             DayLabel.Text = Days[DayCounter];
             PeriodLabel.Text = Periods[PeriodCounter];
-            PlaceFeild.Text = null;
-            DescriptionFeild.Text = null;
+            PlaceFeild.Text = "";
+            DescriptionFeild.Text = "";
         }
     }
 }

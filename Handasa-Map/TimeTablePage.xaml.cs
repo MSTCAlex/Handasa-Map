@@ -96,12 +96,17 @@ namespace Handasa_Map
             var saveTimeTable = new SaveTimeTable();
 
 
-            //test places
-            saveTimeTable.SaveValues("Saturday", "First", "math", "l4");
-            saveTimeTable.SaveValues("Saturday", "Second", "probability", "l5");
-            saveTimeTable.SaveValues("Sunday", "First", "modern", "l4");
-            saveTimeTable.SaveValues("Monday", "First", "programming", "l4");
-            saveTimeTable.SaveValues("Monday", "Second", "circuts", "l4");
+            ////test places
+            //saveTimeTable.deletePriodData("Saturday", "First");
+            //saveTimeTable.deletePriodData("Saturday", "Second");
+            //saveTimeTable.deletePriodData("Sunday", "First");
+            //saveTimeTable.deletePriodData("Monday", "First");
+            //saveTimeTable.SaveValues("Saturday", "Second", "probability", "l5");
+            //saveTimeTable.SaveValues("Sunday", "First", "modern", "l4");
+            //saveTimeTable.SaveValues("Monday", "First", "programming", "l4");
+            //saveTimeTable.SaveValues("Monday", "Second", "circuts", "l4");
+
+
             foreach (var day in days)
             {
                 foreach (var priod in priods)

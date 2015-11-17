@@ -16,7 +16,7 @@
         </StackPanel>
         <Grid HorizontalAlignment="Left" Height="515" VerticalAlignment="Top" Width="400" Margin="0,125,0,0">
             <TextBlock x:Name="DayLabel" FontSize="40" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Saturday" VerticalAlignment="Top" Margin="10,10,0,0" Height="48" Width="380"/>
-            <TextBlock x:Name="PeriodLabel" FontSize="30" HorizontalAlignment="Left" TextWrapping="Wrap" Text="First Period" VerticalAlignment="Top" Margin="10,63,0,0" Height="48" Width="380"/>
+            <TextBlock x:Name="PeriodLabel" FontSize="30" HorizontalAlignment="Left" TextWrapping="Wrap" Text="First" VerticalAlignment="Top" Margin="10,63,0,0" Height="48" Width="380"/>
             <TextBox x:Name="PlaceFeild" HorizontalAlignment="Left" Margin="27,157,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="347"/>
             <TextBlock FontSize="25" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Place:" VerticalAlignment="Top" Margin="10,116,0,0" Height="41" Width="80"/>
             <TextBlock FontSize="25" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Description:" VerticalAlignment="Top" Margin="10,218,0,0" Height="41" Width="146"/>
