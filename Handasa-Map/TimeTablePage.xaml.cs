@@ -4,6 +4,7 @@ using Windows.UI.Xaml.Navigation;
 using Handasa_Map.Helper;
 using System.Collections.Generic;
 using System.Linq;
+using Handasa_Map.Model;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 

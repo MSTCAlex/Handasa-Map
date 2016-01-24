@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Handasa_Map
+namespace Handasa_Map.Model
 {
     public class period
     {
